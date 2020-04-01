@@ -1,12 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Home = () => (
-  <div>
-    <nav>
-      <Link to="/scroll">Scroll</Link>
-    </nav>
-  </div>
-);
+const Home = () => <div>Home</div>;
 
 export default Home;
