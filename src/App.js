@@ -20,7 +20,9 @@ const App = () => (
         </h2>
         <nav>
           {links.map(({ link, label }) => (
-            <Link to={link}>{label}</Link>
+            <Link key={label} to={link}>
+              {label}
+            </Link>
           ))}
         </nav>
       </header>
