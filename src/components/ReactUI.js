@@ -1,12 +1,18 @@
-import React from "react";
-// import { Card } from "@ml318097/react-ui";
+import React, { useState } from "react";
+import { Card, Select } from "@codedrops/react-ui";
 
 const ReactUI = () => {
+  const [dropdown, setDropdown] = useState("a");
   return (
     <section className="container" id="react-ui">
-      {/* <Card curved={true} bottomLine={true}>
-        Heeloooo
-      </Card> */}
+      <Select
+        options={[
+          { label: "Option A", value: "a" },
+          { label: "Option B", value: "b" },
+        ]}
+        value={dropdown}
+        onChange={(value) => setDropdown(value)}
+      />
     </section>
   );
 };
