@@ -13,6 +13,12 @@ const ReactUI = () => {
         value={dropdown}
         onChange={(value) => setDropdown(value)}
       />
+      <Card style={{ width: "400px" }} curved>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint asperiores
+        modi facilis eveniet, perferendis beatae! Illo sit molestias
+        necessitatibus molestiae voluptatem, blanditiis odit voluptates corrupti
+        quidem, laborum ab. Magnam, vel.
+      </Card>
     </section>
   );
 };
