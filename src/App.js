@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { Icon } from "@codedrops/react-ui";
 import "./App.scss";
-import { routes } from "./data";
+import { routes } from "./routes";
 
 const App = (props) => {
   console.log(props);

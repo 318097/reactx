@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
-const TestComponent = () => {
+const TestComponent = (props) => {
+  console.log(props);
   const ref = useRef(null);
 
   const handleClick = () => {
