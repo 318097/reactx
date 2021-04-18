@@ -1,41 +1,29 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import ScrollComponent from "./components/ScrollComponent";
-import SpyScroll from "./components/SpyScroll";
-import ReactUI from "./components/ReactUI";
-import Home from "./components/Home";
+import { Switch, Route, withRouter } from "react-router-dom";
+import { Icon } from "@codedrops/react-ui";
 import "./App.scss";
+import { routes } from "./data";
 
-const links = [
-  { link: "/", label: "Home" },
-  { link: "/spy-scroll", label: "Spy Scroll" },
-  { link: "/scroll", label: "Scroll" },
-  { link: "/react-ui", label: "React UI" },
-];
-
-const App = () => (
-  <BrowserRouter>
+const App = (props) => {
+  console.log(props);
+  return (
     <div className="App" id="react-ui">
       <header>
-        <h2>
-          React<span className="x">X</span>
-        </h2>
-        <nav>
-          {links.map(({ link, label }) => (
-            <Link key={label} to={link}>
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <Icon
+          size={12}
+          onClick={() => props.history.push("/")}
+          type="arrow"
+          direction="left"
+        />
+        <h4>React</h4>
       </header>
       <Switch>
-        <Route exact path="/scroll" component={ScrollComponent} />
-        <Route exact path="/spy-scroll" component={SpyScroll} />
-        <Route exact path="/react-ui" component={ReactUI} />
-        <Route exact path="/" component={Home} />
+        {routes.map(({ route, component, label }) => (
+          <Route key={label} exact path={route} component={component} />
+        ))}
       </Switch>
     </div>
-  </BrowserRouter>
-);
+  );
+};
 
-export default App;
+export default withRouter(App);

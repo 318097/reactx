@@ -1,34 +1,45 @@
+@import "@codedrops/react-ui/dist/styles/colors.scss";
+
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  h2 {
+  background: $strokeOne;
+  padding: 12px;
+  h4 {
     margin: 0;
-    font-size: 2rem;
-    color: #2b2b2b;
+    font-size: 1.6rem;
+    color: $bar;
     text-transform: uppercase;
     span {
       font-size: 3.2rem;
       opacity: 0.8;
     }
   }
-  nav a {
-    padding: 4px 8px;
-    margin: 2px;
-    color: white;
-    border-radius: 2px;
-    background: #f57b39;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1.2rem;
+}
+
+section#home{
+  nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    a{
+      width: 100px;
+      height: 50px;
+      background: $green;
+      margin: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
   }
 }
 
 .container {
   height: 500px;
   width: 500px;
-  margin: 0 auto;
   box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.2),
     -8px -8px 8px white;
   border-radius: 4px;
@@ -70,10 +81,4 @@ section#scroll-component {
   .button:hover {
     background: rgb(21, 161, 255);
   }
-}
-
-section#react-ui {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

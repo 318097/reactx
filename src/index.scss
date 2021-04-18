@@ -1,42 +1,9 @@
-@font-face {
-  src: url("./assets/PatrickHand-Regular.ttf");
-  font-family: PatrickHand;
-}
-
-* {
-  font-family: PatrickHand;
-}
+@import "@codedrops/react-ui/dist/styles/defaults.scss";
+@import "@codedrops/react-ui/dist/styles/colors.scss";
 
 html {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
+  font-family: monospace;
   body {
-    font-size: 1.4rem;
-    background: whitesmoke;
+    background: $bg;
   }
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
