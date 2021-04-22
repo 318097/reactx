@@ -1,15 +1,15 @@
-import ScrollComponent from "./components/ScrollComponent";
+import ScrollToTop from "./components/ScrollToTop";
 import SpyScroll from "./components/SpyScroll";
-import ReactUI from "./components/ReactUI";
+import Mix from "./components/Mix";
 import Home from "./components/Home";
 import Dropdown from "./components/Dropdown";
 
 const routes = [
   { route: "/spy-scroll", label: "Spy Scroll", component: SpyScroll },
-  { route: "/scroll", label: "Scroll to Top", component: ScrollComponent },
-  { route: "/react-ui", label: "React UI", component: ReactUI },
+  { route: "/scroll-to-top", label: "Scroll to Top", component: ScrollToTop },
+  { route: "/mix", label: "Mix", component: Mix },
   {
-    route: "/toggle-dropdown",
+    route: "/dropdown",
     label: "Dropdown",
     component: Dropdown,
   },

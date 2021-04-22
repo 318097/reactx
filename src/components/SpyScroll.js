@@ -50,7 +50,7 @@ const SpyScroll = () => {
   };
 
   return (
-    <section id="spy-scroll" className="container window">
+    <section id="spy-scroll" className="neo">
       <div className="content" ref={scrollRef}>
         <div ref={inputRefs.profile} className="section">
           PROFILE
