@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../routes";
 
 const Home = () => (
-  <section id="home">
+  <section className="home p-20">
     <nav>
       {routes
         .filter((item) => item.route !== "/")

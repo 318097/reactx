@@ -8,7 +8,7 @@ const Dropdown = () => {
     document.addEventListener("click", handleOutsideClick, { capture: true });
     return () =>
       document.removeEventListener("click", handleOutsideClick, {
-        capture: true
+        capture: true,
       });
   }, []);
 
@@ -20,7 +20,7 @@ const Dropdown = () => {
   };
 
   return (
-    <section id="dropdown-component" className="fcc">
+    <section className="bar dropdown">
       <div className="container" ref={containerRef}>
         <div className="label" onClick={() => setDropdownVisibility(true)}>
           Toggle Dropdown
@@ -31,6 +31,7 @@ const Dropdown = () => {
             <div className="item">Item 2</div>
             <div className="item">Item 3</div>
             <div className="item">Item 4</div>
+            <div className="item">Item 5</div>
           </div>
         )}
       </div>
