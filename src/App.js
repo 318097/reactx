@@ -6,16 +6,18 @@ import { routes } from "./routes";
 
 const App = (props) => {
   console.log(props);
+  const isHomePage = props.location.pathname === "/";
   return (
-    <div className="App" id="react-ui">
-      <header>
-        <Icon
-          size={12}
-          onClick={() => props.history.push("/")}
-          type="arrow"
-          direction="left"
-        />
-        <h4>React</h4>
+    <div className="app" id="react-ui">
+      <header onClick={() => props.history.push("/")}>
+        {isHomePage ? (
+          <Icon size={12} type="triangle" />
+        ) : (
+          <Icon size={12} type="arrow" direction="left" />
+        )}
+        <h4>
+          React<span>X</span>
+        </h4>
       </header>
       <Switch>
         {routes.map(({ route, component, label }) => (

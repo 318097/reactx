@@ -9,7 +9,7 @@ const TestComponent = (props) => {
   };
 
   return (
-    <section className="container" id="scroll-component">
+    <section className="window" id="scroll-to-top">
       <div ref={ref} className="content">
         <h2>Title</h2>
         <p>

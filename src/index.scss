@@ -1,8 +1,32 @@
 @import "@codedrops/react-ui/dist/styles/defaults.scss";
 @import "@codedrops/react-ui/dist/styles/colors.scss";
 
+@font-face {
+  font-family: Cascadia-Regular;
+  src: url("assets/font/CascadiaCode-Regular.otf");
+}
+
+@font-face {
+  font-family: Cascadia-SemiBold;
+  src: url("assets/font/CascadiaCode-SemiBold.otf");
+}
+
+@font-face {
+  font-family: Cascadia-Bold;
+  src: url("assets/font/CascadiaCode-Bold.otf");
+}
+
+@font-face {
+  font-family: Cascadia-Light;
+  src: url("assets/font/CascadiaCode-Light.otf");
+}
+
+* {
+  font-family: Cascadia-Regular;
+}
+
 html {
-  font-family: monospace;
+  font-family: Cascadia-SemiBold;
   body {
     background: $bg;
   }

@@ -5,11 +5,13 @@ import { routes } from "../routes";
 const Home = () => (
   <section id="home">
     <nav>
-      {routes.map(({ route, label }) => (
-        <Link key={label} to={route}>
-          {label}
-        </Link>
-      ))}
+      {routes
+        .filter((item) => item.route !== "/")
+        .map(({ route, label }) => (
+          <Link key={label} to={route}>
+            {label}
+          </Link>
+        ))}
     </nav>
   </section>
 );

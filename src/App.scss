@@ -11,29 +11,42 @@ header {
   display: flex;
   align-items: center;
   background: $strokeOne;
-  padding: 12px;
+  padding: 20px;
   h4 {
     margin: 0;
+    padding-left: 4px;
     font-size: 1.6rem;
     color: $bar;
     text-transform: uppercase;
     span {
-      font-size: 3.2rem;
+      font-size: 2rem;
       opacity: 0.8;
     }
   }
 }
 
-section#home{
-  nav{
+section {
+  padding: 20px;
+  .content {
+    height: 94%;
+    width: 100%;
+    overflow: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+}
+
+section#home {
+  nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    a{
-      width: 100px;
-      height: 100px;
+    gap: 12px;
+    a {
+      width: 120px;
+      height: 80px;
       background: $green;
-      margin: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,7 +59,7 @@ section#home{
   }
 }
 
-section {
+section.window {
   height: 500px;
   width: 500px;
   @include neo-shadow;
@@ -60,18 +73,10 @@ section {
   align-items: center;
 }
 
-.content {
-  height: 94%;
-  width: 100%;
-  overflow: auto;
-  padding: 0 10px;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-section#scroll-component {
+section#scroll-to-top {
   p {
     margin-bottom: 30px;
+    font-size: 1.2rem;
   }
 
   .button {
@@ -80,39 +85,41 @@ section#scroll-component {
     right: 10px;
     border: none;
     outline: none;
-    background: lightblue;
+    background: $green;
+    font-size: 1rem;
     padding: 5px 8px;
-    border-radius: 10px;
-    color: rgb(41, 41, 41);
+    border-radius: 2px;
+    color: white;
     transition: 0.3s;
   }
   .button:hover {
-    background: rgb(21, 161, 255);
+    background: $blue;
+    cursor: pointer;
   }
 }
 
-section#dropdown-component{
-  .container{
+section#dropdown-component {
+  .container {
     position: relative;
-    .label{
+    .label {
       padding: 8px;
       background: $bar;
       color: white;
       cursor: pointer;
     }
-    .dropdown{
+    .dropdown {
       position: absolute;
       top: calc(100% + 2px);
       left: 0;
       width: 100%;
-      .item{
+      .item {
         color: white;
         margin-bottom: 2px;
         width: 100%;
         padding: 6px;
         $colors: 1 $blue, 2 $watermelon, 3 $green, 4 $orchid;
         @each $i, $co in $colors {
-          &:nth-child(#{$i}){
+          &:nth-child(#{$i}) {
             background: $co;
           }
         }
