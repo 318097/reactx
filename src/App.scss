@@ -1,5 +1,12 @@
 @import "@codedrops/react-ui/dist/styles/colors.scss";
 
+@mixin neo-shadow($size: 8px) {
+  $negativeSize: -$size;
+  box-shadow: $size $size $size rgba($color: $bar, $alpha: 0.2),
+    $negativeSize $negativeSize $size $white;
+  border: none;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -24,7 +31,7 @@ section#home{
     flex-wrap: wrap;
     a{
       width: 100px;
-      height: 50px;
+      height: 100px;
       background: $green;
       margin: 4px;
       display: flex;
@@ -32,16 +39,17 @@ section#home{
       justify-content: center;
       color: white;
       text-decoration: none;
+      text-align: center;
+      padding: 0 6px;
       font-size: 1.2rem;
     }
   }
 }
 
-.container {
+section {
   height: 500px;
   width: 500px;
-  box-shadow: 8px 8px 8px rgba($color: #000000, $alpha: 0.2),
-    -8px -8px 8px white;
+  @include neo-shadow;
   border-radius: 4px;
   padding: 0;
   position: absolute;
@@ -82,3 +90,71 @@ section#scroll-component {
     background: rgb(21, 161, 255);
   }
 }
+
+section#dropdown-component{
+  .container{
+    position: relative;
+    .label{
+      padding: 8px;
+      background: $bar;
+      color: white;
+      cursor: pointer;
+    }
+    .dropdown{
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      width: 100%;
+      .item{
+        color: white;
+        margin-bottom: 2px;
+        width: 100%;
+        padding: 6px;
+        $colors: 1 $blue, 2 $watermelon, 3 $green, 4 $orchid;
+        @each $i, $co in $colors {
+          &:nth-child(#{$i}){
+            background: $co;
+          }
+        }
+      }
+    }
+  }
+}
+
+// section#dropdown-component{
+//   .container{
+//     position: relative;
+//     .label{
+//       padding: 8px;
+//       background: $bar;
+//       color: white;
+//     }
+//     .dropdown{
+//       position: absolute;
+//       top: -116px;
+//       left: 100%;
+//       $list: 1 -30 -30, 2 -15 -10, 3 0, 4 15 -10, 5 30 -30;
+//     @each $i, $value,$value2 in $list {
+//         .item:nth-child(#{$i}){
+//           animation: .1s #{$i * .1}s fade-in forwards;
+//           transform: rotate(#{$value}deg) translate(#{$value2}px);
+//         }
+//       }
+//       .item{
+//         margin: 20px;
+//         width: 80px;
+//         padding: 8px;
+//         background: $yellow;
+//         opacity: 0;
+//       }
+//     }
+//   }
+// }
+// @keyframes fade-in{
+//   0%{
+//     opacity: 0;
+//   }
+//   100%{
+//     opacity: 1;
+//   }
+// }
