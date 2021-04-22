@@ -125,13 +125,18 @@ section.dropdown {
       width: 100%;
       .item {
         color: white;
+        cursor: pointer;
         margin-bottom: 2px;
         width: 100%;
-        padding: 6px;
+        padding: 10px;
+        opacity: 0;
+        position: relative;
+        bottom: 12px;
         $colors: 1 $blue, 2 $watermelon, 3 $orchid, 4 $green, 5 $yellow;
         @each $i, $co in $colors {
           &:nth-child(#{$i}) {
             background: $co;
+            animation: 0.1s #{$i * 0.1}s fade-in forwards;
           }
         }
       }
@@ -168,11 +173,13 @@ section.dropdown {
 //     }
 //   }
 // }
-// @keyframes fade-in {
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}

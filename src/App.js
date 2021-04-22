@@ -5,7 +5,6 @@ import "./App.scss";
 import { routes } from "./routes";
 
 const App = (props) => {
-  console.log(props);
   const isHomePage = props.location.pathname === "/";
   return (
     <div className="app" id="react-ui">
