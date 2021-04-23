@@ -35,7 +35,10 @@ const Dropdown = () => {
   return (
     <section className="bar dropdown">
       <div className="container" ref={containerRef}>
-        <div className="label" onClick={() => setDropdownVisibility(true)}>
+        <div
+          className="label"
+          onClick={() => setDropdownVisibility((prev) => !prev)}
+        >
           Toggle Dropdown&nbsp;
           <Icon
             fill={colors.white}

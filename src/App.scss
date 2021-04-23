@@ -25,6 +25,21 @@ header {
   }
 }
 
+.item {
+  opacity: 0;
+  color: white;
+  cursor: pointer;
+  position: relative;
+
+  $colors: 1 $blue, 2 $watermelon, 3 $orchid, 4 $green, 5 $yellow;
+  @each $i, $co in $colors {
+    &:nth-child(#{$i}) {
+      background: $co;
+      animation: 0.1s #{$i * 0.1}s fade-in forwards;
+    }
+  }
+}
+
 section:not(.home) {
   height: 500px;
   width: 500px;
@@ -44,6 +59,13 @@ section:not(.home) {
     padding: 0 10px;
     box-sizing: border-box;
     text-align: left;
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
   }
   &.bar {
     background: $bar;
@@ -124,21 +146,10 @@ section.dropdown {
       left: 0;
       width: 100%;
       .item {
-        color: white;
-        cursor: pointer;
         margin-bottom: 2px;
         width: 100%;
         padding: 10px;
-        opacity: 0;
-        position: relative;
         bottom: 12px;
-        $colors: 1 $blue, 2 $watermelon, 3 $orchid, 4 $green, 5 $yellow;
-        @each $i, $co in $colors {
-          &:nth-child(#{$i}) {
-            background: $co;
-            animation: 0.1s #{$i * 0.1}s fade-in forwards;
-          }
-        }
       }
     }
   }
@@ -181,5 +192,26 @@ section.dropdown {
   100% {
     opacity: 1;
     bottom: 0;
+  }
+}
+
+section.hide-scrollbar {
+  height: 300px;
+  width: 250px;
+  .content {
+  }
+  .content::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+section.event-delegation {
+  .item {
+    height: 50px;
+    width: 50px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
