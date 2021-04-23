@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 const HideScrollbar = (props) => {
   return (
-    <section className="neo hide-scrollbar">
+    <section className="hide-scrollbar">
       <div className="content">
         <h2>Title</h2>
         <p>

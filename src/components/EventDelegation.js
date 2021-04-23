@@ -6,7 +6,7 @@ const EventDelegation = () => {
       const { target } = event;
 
       if (target && target.matches("div.item")) {
-        target.style.backgroundColor = "yellow";
+        target.style.borderColor = "white";
       }
     };
 

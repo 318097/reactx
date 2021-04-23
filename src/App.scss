@@ -196,9 +196,13 @@ section.dropdown {
 }
 
 section.hide-scrollbar {
-  height: 300px;
-  width: 250px;
+  height: 350px;
+  width: 350px;
+  border: 4px solid $primary;
+  box-shadow: 4px 4px $blue;
+  background: $strokeOne;
   .content {
+    background: $strokeOne;
   }
   .content::-webkit-scrollbar {
     display: none;
@@ -212,6 +216,8 @@ section.event-delegation {
     margin: 4px;
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
     justify-content: center;
+    border: 2px solid transparent;
   }
 }
